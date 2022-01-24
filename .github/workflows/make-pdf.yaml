@@ -1,0 +1,33 @@
+name: make-pdf
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  make-pdf:
+    if: >
+      !contains(github.event.head_commit.message, 'skip-ci') &&
+      !contains(github.event.pull_request.title, 'skip-ci')
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # matrix of latex files in root to build to pdf, ie.
+        #in: [ main.tex, abstract.tex ]
+        in: [ main.tex ]
+    container: 
+      image: docker://ghcr.io/ahayden/texbox:base
+      options: -u 0:0
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          /usr/bin/pdflatex ${in:=`basename ${{ matrix.in }} .tex`}
+          /usr/bin/bibtex ${in}
+          /usr/bin/pdflatex ${in}
+          /usr/bin/pdflatex ${in}
+          echo "out=${in}.pdf"  >> $GITHUB_ENV
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.out }}
+          path: ${{ env.out }}
