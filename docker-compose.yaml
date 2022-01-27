@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  texbox:
+    image: ghcr.io/ahayden/texbox:base
+    hostname: texbox
+    environment:
+      TERM: "xterm-color"
+    extra_hosts:
+      - "base:127.0.0.1"
+    container_name: texbox
+    volumes:
+      - .:/data
