@@ -15,7 +15,7 @@ jobs:
       matrix:
         # matrix of latex files in root to build to pdf, ie.
         #in: [ main.tex, abstract.tex ]
-        in: [ main.tex ]
+        in: [ cos-w1.tex ]
     container: 
       image: docker://ghcr.io/ahayden/texbox:base
       options: -u 0:0
