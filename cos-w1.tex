@@ -56,7 +56,7 @@
       = -\log{f} + \mathcal{C} \]
 
       In this model, the log binning of the number count of stars in the
-      cluster is linearly proportional to the log bin of flux measured by
+      cluster is linearly proportional to the log of flux measured by
       the observer. This relationship is due to the $1/r$ decline in number
       density $n$ around the observer, and if they were to determine this
       relationship through measurements, they would be able to discern the
@@ -64,7 +64,7 @@
       cluster is nonhomogeneous, would be isotropic from the perspective of 
       the observer, but not isotropic generally.
 
-  \item
+  \pagebreak \item
     \begin{enumerate}
       \item
         The NRAO VLA Sky Survey (NVSS) measured, over four years, the 1.4 
@@ -85,9 +85,10 @@
         The Two Micron All Sky Survey (2MASS) recorded data in three 
         near-infrared bandpasses in the J, H, and Ks bands, simultaneously. 
         The survey covered nearly the entire sky from two ground-based 1.3m 
-        diameter telescopes over four years. Integrating the flux from each 
-        point over 7.8s allowed for detecting sources of minimum magnitude 
-        15.8, 15.1, and 14.3 in each of band respectively.\cite{Skrutskie_2006}
+        diameter telescopes in both the northern and southern hemispheres of
+        Earth over four years. Integrating the flux from each point over 7.8s 
+        allowed for detecting sources of minimum magnitude 15.8, 15.1, and 
+        14.3 in each of band respectively.\cite{Skrutskie_2006}
 
       \item
         Using the 2MASS data as input to select targets in the Ks band, the
@@ -102,12 +103,16 @@
 
     \end{enumerate}
 
-  \item
+  \pagebreak \item
     \begin{enumerate}
       \item
-        NVSS - range minimum 3 mJy (measurement minimum of 2.5 mJy), 
-        maximum 200 mJy to only cut off the highest irradiance tail. This
-        leaves 78\% of the samples. Correlation is -0.98.
+        A subset of NVSS data in the range from a minimum of 2.8 mJy to a
+        maximum of 5000 mJy represents 84\% of the sample. This line fit
+        to the binned curve of this subset has a slope of -1.1, as shown
+        in Figure \ref{fig:nvss-bins}. This slope matches the model of an 
+        inhomogeneous density as predicted in (1).  The slope of a linear 
+        fit to the bins would vary slightly across the distribution, but only 
+        significantly if only the extremes of data set were sampled.
 
         \begin{figure}
           \includegraphics[width=\linewidth]{nvss.eps}
@@ -116,39 +121,73 @@
         \end{figure}
 
       \item
-        2MASX - range minimum 15 mag (measurement minimum of 15 mag), 
-        maximum 8 mag leaves 65\% of the samples. Linear fit correlation 0.85
+        A subset of 2MASX data between 15 mag at the dimmest and 8 mag at the
+        brightest fits a line of slope 0.55, which is close to the predicted
+        value of 0.6 for a homogenous density model in the magnitude scale.
+        This subset represents 65\% of the total data set. This analysis
+        is of J band signals. See Figure \ref{fig:2masx-bins}.
 
         \begin{figure}
           \includegraphics[width=\linewidth]{2masx.eps}
-          \caption{2MASX samples binned by mag J band, both scales in log}
+          \caption{2MASX samples binned by mag J band, count in log}
           \label{fig:2masx-bins}
         \end{figure}
 
       \item
-        2MRS - range minimum 11.5 mag, maximum 7.0 mag leaves 
-        88\% of the samples. Linear fit correlation -0.99
+        A similar analysis of a subset of data from the 2MRS data set, 
+        though a subset that represents a greater fraction of the overall 
+        data set than was selected for the 2MASX analysis, shows the same
+        value for slope (0.55 for a model that predicts 0.6). This subset
+        represented 88\% of the data set and spans 11.5 mag to 7.0 mag in the
+        K band. See Figure \ref{fig:2mrs-bins}
 
         \begin{figure}
           \includegraphics[width=\linewidth]{2mrs.eps}
-          \caption{2MRS samples binned by mag K band, both scales in log}
+          \caption{2MRS samples binned by mag K band, count in log}
           \label{fig:2mrs-bins}
         \end{figure}
 
     \end{enumerate}
-  \item
-    Figure \ref{fig:2mrs-cz} is the 2MRS catalog limited to the sources with 
-    $cz$ determined to be less than 8500 km/s, which makes up the nearest 
-    50\% of sources in the dataset by redshift $z$ as a proxy for distance.
-    \begin{figure}
-      \includegraphics[width=\linewidth]{2mrs-cz.eps}
-      \caption{Nearest 50\% of 2MRS sources in Aitoff projection 
-        oriented to the galactic plane, as determined by $cz$}
-      \label{fig:2mrs-cz}
-    \end{figure}
+  \pagebreak \item
+    \begin{enumerate}
+      \item
+        The 2MRS catalog limited to sources with $cz < 8500 km/s$ is shown in
+        Figure \ref{fig:2mrs-czg} in a projection oriented to the galactic
+        plane. This makes up 50\% of the sources in the data set. The 
+        $cz$ value is measure through spectroscopy of each source and can be
+        used as a proxy for distance given the assumption that recession
+        velocities increase with distance.
 
+        Limiting to this subset reveals some filamentary structure that runs 
+        across and it divided by the void in the middle of the projection. 
+        This void is do to extinction in the source light by the Milky Way 
+        band.
+
+        \begin{figure}
+          \includegraphics[width=\linewidth]{2mrs-czg.eps}
+          \caption{Nearest 50\% of 2MRS sources in Aitoff projection 
+            oriented to the galactic plane, as determined by $cz$}
+          \label{fig:2mrs-czg}
+        \end{figure}
+    
+      \item
+        Figure \ref{fig:2mrs-czsg} is the 2MRS catalog limited to the sources 
+        with $cz$ determined to be less than 8500 km/s, making up the nearest
+        50\% of source objects. 
+
+        In this view, the structures are not divided by the plane of the
+        Milky Way, and appear less filamentary and more globular.
+        \begin{figure}
+          \includegraphics[width=\linewidth]{2mrs-czsg.eps}
+          \caption{Nearest 50\% of 2MRS sources in Aitoff projection 
+            oriented to the supergalactic local group plane, as determined 
+            by $cz$}
+          \label{fig:2mrs-czsg}
+        \end{figure}
+    \end{enumerate}
 \end{enumerate}
 
+\pagebreak
 \bibliographystyle{plain}
 \bibliography{refs}
 
