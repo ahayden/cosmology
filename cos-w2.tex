@@ -6,12 +6,18 @@
 \usepackage{enumitem,amssymb}
 \usepackage{ragged2e}
 \usepackage{physics}
+
 \usepackage{caption}
-\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{url}
+
 \usepackage{graphicx}
 \usepackage{epstopdf}
+\usepackage{tikz}
+\graphicspath{{data/cos-w2}}
 
-\graphicspath{{data/cos-w2/}}
+\usepackage{biblatex}
+\bibliography{refs}
 
 \title{cos-w2 questions}
 \author{ariahayd}
@@ -134,9 +140,10 @@
 
 \end{enumerate}
 
+This paper is available publicly.\cite{Hayden_Cosmology_Source_Repo}
+
 \pagebreak
-\bibliographystyle{plain}
-\bibliography{refs}
+\printbibliography
 
 \end{document}
 

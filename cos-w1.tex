@@ -6,10 +6,17 @@
 \usepackage{enumitem,amssymb}
 \usepackage{ragged2e}
 \usepackage{physics}
+
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{url}
+
 \usepackage{graphicx}
 \usepackage{epstopdf}
+\graphicspath{{data/cos-w1}}
 
-\graphicspath{{data/cos-w1/}}
+\usepackage{biblatex}
+\bibliography{refs}
 
 \title{cos-w1 tasks}
 \author{ariahayd}
@@ -187,9 +194,10 @@
     \end{enumerate}
 \end{enumerate}
 
+This paper is available publicly.\cite{Hayden_Cosmology_Source_Repo}
+
 \pagebreak
-\bibliographystyle{plain}
-\bibliography{refs}
+\printbibliography
 
 \end{document}
 

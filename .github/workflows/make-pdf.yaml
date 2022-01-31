@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           /usr/bin/pdflatex ${in:=`basename ${{ matrix.in }} .tex`}
-          /usr/bin/bibtex ${in}
+          /usr/bin/biber ${in}
           /usr/bin/pdflatex ${in}
           /usr/bin/pdflatex ${in}
           echo "out=${in}.pdf"  >> $GITHUB_ENV

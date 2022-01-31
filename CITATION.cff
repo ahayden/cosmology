@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "A basic citation for the Cosmology base repo is below"
+authors:
+- family-names: "Hayden"
+  given-names: "Aaron"
+title: "Cosmology Source Repo"
+url: "https://github.com/ahayden/cosmology"

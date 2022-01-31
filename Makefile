@@ -11,7 +11,7 @@ all: ${OUT}
 	${TEX} $(basename $< .tex)
 
 clean:
-	rm -rvf *.log *.aux *.bbl *.blg ${OUT}
+	rm -rvf *.log *.aux *.bbl *.blg *.run.xml *.bcf *.out ${OUT}
 
 distclean:
 	rm -rvf *.pdf
