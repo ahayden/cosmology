@@ -8,8 +8,7 @@
 \usepackage{physics}
 
 \usepackage{caption}
-\usepackage{hyperref}
-\usepackage{url}
+\usepackage{hyperref,url}
 
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -28,10 +27,10 @@
 
 \begin{enumerate}
     \item % 1.
-      Where the number density $n$ in the star cluster declines as 
-      $1/r$, the the total number of objects with a measurable flux 
-      $f$ within a radius $r$ to an observer at the center of the cluster 
-      is given, with the differential in $r$, by: 
+      Where the number density \(n\) in the star cluster declines as 
+      \(1/r\), the the total number of objects with a measurable flux 
+      \(f\) within a radius \(r\) to an observer at the center of the cluster 
+      is given, with the differential in \(r\) by: 
 
       \begin{equation}
         N = \frac{4}{3} \pi r^3 \left( \frac{n}{r} \right) \implies 
@@ -39,33 +38,33 @@
       \end{equation}
 
       The cluster is populated by stars assumed to have uniform luminosity, 
-      so the flux $f$ from each source and differential along the radius is:
+      so the flux \(f\) from each source and differential along the radius is:
 
       \begin{equation}
         f = \frac{L}{4 \pi r^2} \implies \dv{f}{r} = -\frac{L}{2 \pi r^3}
       \end{equation}
 
-      Dividing $(1)$ by $(2)$ yields:
+      Dividing \(1)\) by \(2)\) yields:
       \[ \dv{N}{f} = -\frac{16 \pi^2 r^4 n }{3 L} \propto r^4 \]
 
-      Because of $(2)$, $r^2 \propto f^{-1}$, which can be substituted into 
-      the proportionality to remove dependence on $r$ and to fix $\alpha$:
+      Because of \(2)\) \(r^2 \propto f^{-1}\) which can be substituted into 
+      the proportionality to remove dependence on \(r\) and to fix \(alpha\)
       \[  \dv{N}{f} \propto f^{-2} = f^{\alpha} \implies \alpha = -2 \]
 
       Counts are analyzed in logarithmic bins of flux, so it is necessary to
-      substitute $\frac{1}{f}\dd{f} = \dd{(\ln{f})}$ into the expression 
+      substitute \(frac{1}{f}\dd{f} = \dd{(\ln{f})}\) into the expression 
       relating count and flux:
       \[ f \dv{N}{f} = \dv{N}{\ln{f}}
       = \mathcal{C} f^{\alpha + 1} = \mathcal{C} f^{-1} \]
 
-      Taking the log of both sides and substitute $\alpha$,
+      Taking the log of both sides and substitute \(alpha\)
       \[ \log{\left(\dv{N}{\ln{f}}\right)} = (\alpha + 1)\log{f} + \mathcal{C}
       = -\log{f} + \mathcal{C} \]
 
       In this model, the log binning of the number count of stars in the
       cluster is linearly proportional to the log of flux measured by
-      the observer. This relationship is due to the $1/r$ decline in number
-      density $n$ around the observer, and if they were to determine this
+      the observer. This relationship is due to the \(1/r\) decline in number
+      density \(n\) around the observer, and if they were to determine this
       relationship through measurements, they would be able to discern the
       inhomogeneity of their surroundings. The distribution of stars in the
       cluster is nonhomogeneous, would be isotropic from the perspective of 
@@ -78,10 +77,10 @@
         GHz flux from field ``snapshot'' views of the sky north of -40, 
         stitched together to make 4°×4° patches with polarization data along 
         the third dimension. A catalog of 2e6 discrete source features with 
-        flux density $S$ greater than 2.5 mJy were extracted from the cubes. 
+        flux density \(S\) greater than 2.5 mJy were extracted from the cubes. 
         Measurement error in the position in the sky of point sources varies 
         with the measured irradiance, from 7" uncertainty at the lower limit 
-        to less than 1" in the bin of highest $S$. The catalog derived from
+        to less than 1" in the bin of highest \(S\) The catalog derived from
         this data set includes ``radio galaxies and quasars\ldots ultraluminous 
         starburst galaxies even at cosmological distances, plus statistically 
         useful numbers of nearby ``normal'' galaxies, low-luminosity 
@@ -122,10 +121,10 @@
         significantly if only the extremes of data set were sampled.  Could 
         the slope fitting the model in (1) be due to cosmological redshift of 
         AGN radio sources making the density distribution appear closer to a 
-        $1/r$ dropoff? This result would mean that the luminosity of 
-        measureable redshifted sources is reduced by a factor of $1/r$ which 
+        \(1/r\) dropoff? This result would mean that the luminosity of 
+        measureable redshifted sources is reduced by a factor of \(1/r\) which 
         fits with the expansion model in which energy density of radiation 
-        declines as $r^{-4}$.
+        declines as \(r^{-4}\)
 
         \begin{figure}[!htb]
           \includegraphics[width=\linewidth]{nvss.eps}
@@ -164,10 +163,10 @@
   \pagebreak \item % 4.
     \begin{enumerate}
       \item
-        The 2MRS catalog limited to sources with $cz < 8500 km/s$ is shown in
+        The 2MRS catalog limited to sources with \(cz < 8500 km/s\) is shown in
         Figure \ref{fig:2mrs-czg} in a projection oriented to the galactic
         plane. This makes up 50\% of the sources in the data set. The 
-        $cz$ value is measure through spectroscopy of each source and can be
+        \(cz\) value is measure through spectroscopy of each source and can be
         used as a proxy for distance given the assumption that recession
         velocities increase with distance.
 
@@ -179,13 +178,13 @@
         \begin{figure}[!htb]
           \includegraphics[width=\linewidth]{2mrs-czg.eps}
           \caption{Nearest 50\% of 2MRS sources in Aitoff projection 
-            oriented to the galactic plane, as determined by $cz$}
+            oriented to the galactic plane, as determined by \(cz\)}
           \label{fig:2mrs-czg}
         \end{figure}
     
       \item
         Figure \ref{fig:2mrs-czsg} is the 2MRS catalog limited to the sources 
-        with $cz$ determined to be less than 8500 km/s, making up the nearest
+        with \(cz\) determined to be less than 8500 km/s, making up the nearest
         50\% of source objects. 
 
         In this view, the structures are not divided by the plane of the
@@ -194,7 +193,7 @@
           \includegraphics[width=\linewidth]{2mrs-czsg.eps}
           \caption{Nearest 50\% of 2MRS sources in Aitoff projection 
             oriented to the supergalactic local group plane, as determined 
-            by $cz$}
+            by \(cz\)}
           \label{fig:2mrs-czsg}
         \end{figure}
     \end{enumerate}
