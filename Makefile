@@ -13,5 +13,5 @@ all: ${OUT}
 clean:
 	rm -rvf *.log *.aux *.bbl *.blg *.run.xml *.bcf *.out ${OUT}
 
-distclean:
+distclean: clean
 	rm -rvf *.pdf
