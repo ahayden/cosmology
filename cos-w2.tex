@@ -73,10 +73,10 @@
     \item % 2. 
       For the photon \(\nu\) in Figure \ref{fig:field} with energy 
       \(E = h \nu\), the change in energy across the gravitational potential 
-      is \(E=-U\) within the potential well and \(E=-(U+\Delta{U})\) as the 
-      photon climbs the potential. Because of conservation of energy, the 
-      energy of the photon becomes \(E= h \Delta{\nu}\) as it traverses the 
-      potential, where \(\Delta{\nu} \propto \Delta{U}\).
+      is \(\Delta{E}=-\Delta{U}\) as the photon climbs the potential. Because 
+      of conservation of energy, the energy of the photon becomes 
+      \(E = h \Delta{\nu} = \frac{h}{\Delta\lambda}\) as it traverses the potential
+      along the path \(ds\).
 
       \begin{figure}[!htb]
         \begin{center}
@@ -84,7 +84,7 @@
             \draw[thin,gray!40] (-2,-2) grid (2,2);
             \draw[line width=1pt,blue,-stealth](-1.5,-1)--(-1.5,1);
             \draw[line width=1pt,red,-stealth](-1.25,1.5)--(-1.25,-1.5) 
-              node[anchor=south west]{\(\boldsymbol{\nu}\)};
+              node[anchor=south west]{\(\boldsymbol{\nu, ds}\)};
             \draw[line width=1pt,blue,-stealth](-1,-1)--(-1,1);
             \draw[line width=1pt,blue,-stealth](-0.5,-1)--(-0.5,1);
             \draw[line width=1pt,blue,-stealth](0,-1)--(0,1)
@@ -100,18 +100,29 @@
         \label{fig:field}
       \end{figure}
 
+      The photon is attenuated as it performs the work of climbing out of the
+      potential by following the path. It is possible to define the change
+      in wavelength as the integral along the path.
+
+      \[ \int_{\lambda_{0}}^{\lambda} \dd{\lambda} = 
+      \int_{0}^{s} \frac{M G}{h} \dd{s} \implies \Delta\lambda = 
+      \lambda - \lambda_{0} = \frac{S M G}{h}\]
+
+      Where \( M \) is the constant mass causing the unform potential and
+      \( \lambda_{0} \) is the inital wavelength of the photon.
+
     \item % 3.
       Space can be curved in cases where the most direct path between two
       points, the geodesic, follows a curve rather than a straight line. The
-      curve can be any surve, but where the assumptions of homogeneity and
+      curve can be any function, but where the assumptions of homogeneity and
       isotropy are made, the curvature is simplified to be one of uniform
       spherical or hyperbolic curvature, or flat. A spherical curvature has
       a positive curve, which would increase the value of a geodesic compared
-      to flat space, and can cause distant objects to appear larger and dimmer
-      than they would would in flat space because of the elongated path of
-      light following the geodesic. Hyperbolic geometry would decrease the 
+      to flat space, and can cause distant objects to appear smaller and 
+      dimmer than they would would in flat space because of the elongated path 
+      of light following the geodesic. Hyperbolic geometry would decrease the 
       length of a geodesic compared with flatness and would cause distant
-      objects to appear smaller than they would in flat space.
+      objects to appear larger than they would in flat space.
 
    \item % 4.
      For a measured radius \(a\) across a spherical surface of radius \(R\),
@@ -195,7 +206,8 @@
      This can be inverted to give the curvature of the geodesic as a function
      of \(r\):
      \begin{equation}
-       f{(r)} = - \frac{1}{k r^2 + \mathcal{C}}
+       f{(r)} = - \frac{1}{k r^2 + \mathcal{C}} 
+       = \frac{1}{\mathcal{C} - k r^2}
        \label{eqn:f_r}
      \end{equation}
 
