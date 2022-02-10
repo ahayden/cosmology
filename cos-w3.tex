@@ -1,0 +1,151 @@
+\documentclass{paper}
+\usepackage{times}
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem,amssymb}
+\usepackage{ragged2e}
+\usepackage{physics}
+
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\graphicspath{{data/cos-w3}}
+
+\usepackage{biblatex}
+\bibliography{refs}
+
+\title{cos-w3 questions}
+\author{ariahayd}
+\date{15 February 2022}
+
+\begin{document} 
+
+\maketitle
+
+\begin{enumerate}
+    \item % 1. 
+      For observer \(O\), an event has coordinates: \(\vb{E} = \ev{x,y,z,t}\)
+
+      For observer \(O'\): \(\vb{E'} = \ev{x',y',z',t'}\)
+
+      Show that \(s^2 = (c t)^2 - x^2\) is Lorentz invariant.
+      \begin{equation}
+        \begin{bmatrix}
+          x' \\ y' \\ z' \\ t'
+        \end{bmatrix}
+        = 
+        \begin{matrix}
+          \gamma (x - v t) \\ y \\ z \\ \gamma (t - \frac{vx}{c^2})
+        \end{matrix}
+      \end{equation}
+
+      \[
+        s^2 = (ct)^2 - x^2 - y^2 - z^2 
+        \stackrel{?}{=}
+        s'^2 = (ct')^2 - x'^2 - y'^2 - z'^2 
+      \]
+
+      Subtract coordinates in \(y\) and \(z\) as equivalent
+      \[ s^2 = (ct)^2 - x^2 \stackrel{?}{=} (ct')^2 - x'^2 \]
+
+      Substitute Lorentz
+      \[ (ct')^2 - x'^2 = \left[\gamma\left(t - x \frac{v}{c^2}\right)\right]^2 
+      - \left[\gamma\left(x - tv\right)\right]^2 
+      = \left(c \gamma t - \frac{xv\gamma}{c}\right)^2 
+      - \left(x\gamma - vt\gamma\right)^2 \]
+
+      \[ = 
+      \gamma^2\left(\frac{c^4t^2 - 2c^2tvx + x^2v^2}{c^2}\right)^2 
+      - \gamma^2\left(\frac{c^2x^2 - 2c^2xtv + c^2t^2v^2}{c^2}\right)^2 \]
+
+      Rewrite \(\gamma^2\)
+      \[ \gamma = \frac{1}{\sqrt{1 - \beta^2}}, \beta = \frac{v}{c} \implies
+      \gamma^2 = \frac{1}{1-\frac{v^2}{c^2}} = \frac{c^2}{c^2 - v^2}\]
+
+      Substitute \(\gamma^2\)
+      \[ = \left(\frac{c^2}{c^2-v^2}\right)
+      \left(\frac{c^4t^2 - 2c^2tvx + x^2v^2}{c^2}\right)
+      - \left(\frac{c^2}{c^2-v^2}\right)
+      \left(\frac{c^2x^2 - 2c^2tvx + c^2t^2v^2}{c^2}\right)
+      \]
+
+      \[ = \left(\frac{c^2}{c^2-v^2}\right)
+      \left(\frac{c^4t^2 + x^2v^2 - c^2x^2 - c^2t^2v^2}{c^2}\right)
+      = \left(\frac{c^4t^2 + x^2v^2 - c^2x^2 - c^2t^2v^2}{c^2 - v^2}\right)
+      \]
+
+      \[ = \left(\frac{c^2t^2(c^2 - v^2) - x^2(c^2 - v^2)}{c^2 - v^2}\right)
+      = (ct)^2 - x^2 
+      \]
+
+    \item % 2. 
+      Time is encoded in special relativity as
+      \(\dd{s}^2 = c^2\dd{t}^2 - \dd{x}^2 - \dd{y}^2 - \dd{z}^2\), a single 
+      factor of \(c^2\).  This is the time component of the worldline of a 
+      object moving through space.
+
+      In the Robertson-Walker metric, time is encoded as
+      \(\dd{s}^2 = c^2\dd{t}^2 - R^2(t)\dd{S}^2\), a factor of \(c^2\), as 
+      well as in the spatial component of the scale of the geometry of the 
+      universe, \(R(t)\). This allows space to expand and contract with time
+      dependence.
+
+    \item % 3.
+      Cosmological distances can be measured by emitted photons, which follow 
+      paths through isotropic space to our telescopes.
+
+      \begin{equation}
+        \frac{\textrm{Distance apparent in luminosity attenuation}}
+        {\textrm{Distance apparent as angular size}}
+        = \frac{d_L}{d_A}
+      \end{equation}
+      
+      For \(dA\), \(d \approx \frac{\textrm{Object diameter,} D}
+      {\textrm{Angular size,} \theta}\), the angular size is invariant in an 
+      isotropic universe and object diameter is invariant for a 
+      gravitationally bound object. \(d_A\) is shifted only as a factor of the 
+      distance itself:
+      \[ d_{A, observed} = \frac{D_{A0}}{1 + z} \]
+
+      For \(dL\), \(d^2 = \frac{L}{4 \pi F}\) where flux is the photon power
+      per solid angle attenuated by a factor in distance itself and also in 
+      the slowed arrival rate of photon wave packets, so
+      \[ d_L^2 = \frac{L}{4 \pi F} = 
+      \frac{L}{4 \pi (\frac{L}{4 \pi d_{L0}^2 r^2} 
+      \frac{R_e}{d_{L0}} \frac{R_e}{d_{L0}} ) } \]
+
+      \[ d_L = d_{L0}(1 + z) \]
+
+   \item % 4.
+      Proper distance is the separation between two objects moving with the
+      Hubble Flow. The rate of change in the proper distance between two
+      comoving observers is the geodesic between the points of observation
+      \(ds^2 = c^2dt^2 - R^2(t)dS^2\), where \(c^2t^2 = 0 \) for the case of
+      fundamental observers. Then, the geodesic is simplified as:
+
+      \begin{equation}
+        \dd{s}^2 = - {R}^2(t)\dd{S}^2 \implies \dd{s} \propto \abs{R}
+      \end{equation}
+
+      Where \(R\) is the time dependent scale factor of the intrinsic 
+      geometry of the universeo, \(dS\) which is independent of time. 
+      The Hubble Law is the rate of expansion of \(ds\) assuming isotropy
+      and homogeneity, implying constant variance in \(R\) with \(t\).
+
+      \[ \frac{\dd{s}}{\dd{t}} = \dot{R} \]
+
+
+
+\end{enumerate}
+
+This paper is available publicly.\cite{Hayden_Cosmology_Source_Repo}
+
+\pagebreak
+\printbibliography
+
+\end{document}
+
