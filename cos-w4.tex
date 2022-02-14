@@ -1,0 +1,224 @@
+\documentclass{paper}
+\usepackage{times}
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem,amssymb}
+\usepackage{ragged2e}
+\usepackage{physics}
+
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\graphicspath{{data/cos-w4}}
+
+\usepackage{biblatex}
+\bibliography{refs}
+
+\title{cos-w4 questions}
+\author{ariahayd}
+\date{22 February 2022}
+
+\begin{document} 
+
+\maketitle
+
+\begin{enumerate}
+    \item % 1. 
+      For the Friedmann equation as a solution Einstein field equations for
+      a homogeneous and isotropic universe,
+
+      \begin{equation}
+        \dot{R}^2 = \frac{8 \pi G}{3}\rho R^2 - k c^2 + \frac{\Lambda}{3} R^2
+        \label{eq:friedmann}
+      \end{equation}
+
+      Solve for R for each case:
+
+      \begin{enumerate}
+        \item
+          The Milne model, \(k < 0, \rho = 0, \Lambda = 0\):
+          \[ \dot{R}^2 = k c^2 \implies R = t \sqrt{kc^2} \]
+
+        \item
+          The Einstein-de-Sitter model, \(k = 0, \Lambda =0\), where 
+          \(\rho \propto R^{-3}\) for matter-dominated density:
+
+          \[ 
+          \dot{R}^2 = \frac{8 \pi G}{3}\rho R^2 \implies
+          \dot{R} = 
+          \left[\frac{8 \pi G}{3}(\propto R^{-3})\right]^{\frac{1}{2}} R
+          \] 
+
+          \[
+          \int R^{\frac{1}{2}}\dd{r} = \int \sqrt{\frac{8 \pi G}{3}}\dd{t}
+          \implies \frac{2}{3}R^{\frac{3}{2}} 
+          = \left(\frac{8 \pi G}{3}\right)^\frac{1}{2} t + \mathcal{C} 
+          \]
+
+        \item
+          A flat geometry in the radiation-dominated era, 
+          \(k = 0, \Lambda = 0 \) where \(\rho \propto R^{-4}\):
+
+          \[ 
+          \dot{R}^2 = \frac{8 \pi G}{3}\rho R^2 \implies
+          \dot{R} = 
+          \left[\frac{8 \pi G}{3}(\propto R^{-4})\right]^{\frac{1}{2}} R
+          \] 
+
+          \[
+          \int R\dd{r} = \int \sqrt{\frac{8 \pi G}{3}}\dd{t}
+          \implies \frac{1}{2}R^{2} 
+          = \left(\frac{8 \pi G}{3}\right)^\frac{1}{2} t + \mathcal{C} 
+          \]
+
+        \item
+          Parameters dominated by \(\Lambda\), \(\rho 
+          \rightarrow 0, k=\mathcal{C}\):
+
+          \[
+            \int R^{-2}\dd{r} = \int \sqrt{\frac{\Lambda}{3}}\dd{t}
+          \implies -\frac{1}{R} = \sqrt{\frac{\Lambda}{3}} t + \mathcal{C}
+          \]
+
+      \end{enumerate}
+
+
+    \item % 2.
+      \begin{enumerate}
+        \item
+          For the case of a matter-dominated Einstein-de-Sitter cosmology,
+          show expansion follows time as:
+          \[ t = \left(\frac{1}{6 \pi G \rho}\right)^{0.5} \]
+
+          The cosmology is derived from (b) above:
+          \[ 
+          \dot{R}^2 = \frac{8 \pi G}{3}\rho R^2 \implies
+          \dot{R} = 
+          \left[\frac{8 \pi G}{3}(\rho \propto R^{-3})\right]^{\frac{1}{2}} R
+          \] 
+
+          \[
+          \int R^{\frac{1}{2}}\dd{r} 
+          = \int \sqrt{\frac{8 \pi G \rho}{3}}\dd{t}
+          \implies 
+          \frac{2}{3}R^{\frac{3}{2}} \propto
+          \left(\frac{8 \pi G \rho }{3}\right)^\frac{1}{2} t 
+          \]
+
+          \[
+            R^3=\left(\frac{9}{4}\times
+            \frac{8 \pi G \rho}{3}\right)^\frac{1}{2} t 
+          \implies
+          t = \left(\frac{1}{6 \pi G \rho}\right)^\frac{1}{2} R^3
+          \]
+
+        \item
+          For the case of a radiation-dominated energy density \(\rho\),
+          show expansion follows time as:
+          \[ t = \left(\frac{3}{32 \pi G \rho}\right)^{0.5} \]
+
+          The cosmology is derived from (c) above:
+          \[ 
+          \dot{R}^2 = \frac{8 \pi G}{3}\rho R^2 \implies
+          \dot{R} = 
+          \left[\frac{8 \pi G}{3}(\rho \propto R^{-4})\right]^{\frac{1}{2}} R
+          \] 
+
+          \[
+          \int R\dd{r} 
+          = \int \sqrt{\frac{8 \pi G \rho}{3}}\dd{t}
+          \implies 
+          \frac{1}{2}R^2 \propto
+          \left(\frac{8 \pi G \rho }{3}\right)^\frac{1}{2} t 
+          \]
+
+          \[
+          R^2 =\left(4\times\frac{8 \pi G \rho}{3}\right)^\frac{1}{2} t 
+          \implies
+          t = \left(\frac{3}{32 \pi G \rho}\right)^\frac{1}{2} R^2
+          \]
+
+      \end{enumerate}
+
+    \item % 3.
+      The complete Friedmann equation is expressed in Equation 
+      \ref{eq:friedmann}.  Disregarding expansion due to \(\Lambda\) and 
+      considering only the flat case where \(k=0\) as the equilibrium point 
+      for critical density \(\rho_c\), the expression simplifies to:
+
+      \[ \dot{R}^2 = \frac{8 \pi G}{3}\rho_c R^2 \]
+
+      Where \( H:= \frac{\dot{R}}{R} \), the present day scale length of
+      expansion can be written as:
+
+      \[ 
+      \frac{\dot{R}^2}{R_0^2} = \frac{8 \pi G}{3}\rho_c 
+      \implies
+      \rho_c = \frac{3 H_0^2}{8 \pi G}
+      \]
+
+      \(\rho_c\) evalutes to \(8.68\times10^{-27} kg/m^{3}\) 
+      for \(H_0 = 68 km/s/Mpc\).
+
+    \item % 4.
+      The ideal gas law relates pressure to temperature.
+      \[ PV = n\mathcal{R}T \implies P = \rho\mathcal{R}T\] 
+
+      Equate pressures between an ideal hydrogen gas and the cosmological
+      equation of state \(P = \omega \rho c^2\):
+      \[ 
+      \omega \rho c^2 = \rho \mathcal{R} T 
+      \implies 
+      \omega = \frac{\mathcal{R}}{c^2}T = \mathcal{C}T
+      \]
+
+      So, \(\mathcal{C} = \frac{\mathcal{R}}{c^2} \). This relationship is 
+      valid for the temperature domain of atomic hydrogen as an ideal gas: 
+      \[ 20 K < T < 5000 K \]
+
+    \item % 5.
+      The energy density of the cosmic microwave background radiation follows
+      a black body spectrum which can be scaled to different peak wavelengths 
+      and temperatures through Wien's displacement law, which maintains the 
+      profile of the spectrum across peak radiation intensity as 
+      \(\lambda \propto T^{-1}\) for a spectrum given by:
+      \begin{equation}
+        \dd{u} = \frac{8 \pi h \nu^3}{c^3} \frac{1}{
+          \exp(\frac{h \nu}{kT}) - 1} \dd{\nu}
+        \label{eq:spectrum}
+      \end{equation}
+
+      The peak of the black body spectrum rises increases with \(\nu\) and 
+      declines again with the inflection of the exponential term:
+      \[ \exp(\frac{h \nu}{k T}) > 1 \]
+
+      Substituting \(\nu = \frac{c}{\lambda}\) shows the decline of the black 
+      body spectrum in wavelengths greater than the thermal wavelength:
+      \begin{equation}
+        \lambda = \frac{h c}{k T}
+        \label{eq:lambda}
+      \end{equation}
+
+      The observed thermal wavelength, \(\lambda^\prime\) can be 
+      dependendent on \(z\) for significant redshifts:
+      \[ \frac{\lambda^\prime(z)}{\lambda_{emitted}} = (1 +z)
+      \implies \lambda^\prime = (1 + z)\lambda_{emitted} \]
+
+      The characteristic temperature of a black body spectrum shifted to
+      significant \(z\) can then be substituted into Equation \ref{eq:lambda}:
+      \[ T^\prime = \frac{h c}{k \lambda^\prime} 
+      = \frac{h c (1 + z)}{k \lambda_{emitted}}= T (1 + z)\]
+
+\end{enumerate}
+
+This paper is available publicly.\cite{Hayden_Cosmology_Source_Repo}
+
+\pagebreak
+\printbibliography
+
+\end{document}
+
