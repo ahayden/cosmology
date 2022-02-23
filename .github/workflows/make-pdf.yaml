@@ -16,7 +16,7 @@ jobs:
         # matrix of latex files in root to build to pdf, ie.
         #in: [ main.tex, abstract.tex ]
         in: [ cos-w1.tex, cos-w2.tex, cos-w3.tex 
-            ,cos-w4.tex #cos-w5.tex, cos-w6.tex
+            ,cos-w4.tex, cos-w5.tex #, cos-w6.tex
             #,cos-w7.tex, cos-w8.tex, cos-w9.tex
             #,cos-w10.tex, cos-w11.tex,
             ,concepts.tex

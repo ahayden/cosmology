@@ -8,16 +8,16 @@
 \usepackage{physics}
 
 \usepackage{caption}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{url}
-
 
 \usepackage{graphicx}
 \usepackage{epstopdf}
+\usepackage{tikz}
 \graphicspath{{data/concepts}}
 
 \usepackage{biblatex}
-\bibliography{refs.bib}
+\bibliography{refs} %resfs.bib
 
 \title{cosmology concepts}
 \author{ariahayd}
@@ -25,15 +25,79 @@
 
 \begin{document} 
 
+% set frameboxes to be borderless
+\setlength{\fboxsep}{0pt}
+\setlength{\fboxrule}{0pt}
+
 \maketitle
+
+\section{Metrics} 
+  A metric is an equation for the distance between two points.
+
+  There are two methods for determining the curvature: (1) geometrically and
+  (2) by the metric.
+
+  The geometric determination can be done in two ways: (1) measuring the 
+  circumference of a circle of expected radius and (2) parallel transport of 
+  a vector across the surface around a closed path.
+
+  For \( \phi := k A \implies k = \phi / A \), if \( \phi = \frac{\pi}{2} \) 
+  steradians, \( \frac{1}{8} \) of a circle of radius 
+  \( R \), 
+  \[ k = \frac{\frac{\pi}{2}}{\frac{1}{8} 4 \pi R^2 } = \frac{1}{R^2} \]
+
+  \begin{figure}[!hbt]
+    \begin{center}
+    \fbox{ \begin{tikzpicture}
+      % 2-sphere surface
+      \draw (0,0) circle (2cm);
+      % perspective-facing circumference
+      \draw (-1.404,1.404) arc (180:360:1.404 and 0.2);
+      % perspective-hidden circumference
+      \draw[dashed] (-1.404,1.404) arc (0:180:-1.404 and 0.2);
+      % measured radius
+      \draw (0,2) arc (300:360:-.9) node[midway]{\(a\)};
+      \draw (0,2) arc (0:180:9) node[midway]{\(a\)};
+      % flattened radius
+      \draw[dashed] (0,1.404) -- node{\tiny \(R sin
+        \left(\frac{a}{R}\right)\)}(1.404,1.404);
+      % sphere radius points
+      \fill[fill=black] (0,0) circle (1pt);
+      \fill[fill=black] (0,2) circle (1pt);
+      \fill[fill=black] (1.414,1.414) circle (1pt);
+      % projection of triangle
+      \draw[dashed] (0,0) -- (0,2);
+      \draw[dashed] (.702,0) (0:60);
+      \draw[dashed] (0,0) -- node[below]{\(R\)} (1.414,1.414);
+      \end{tikzpicture} }
+    \end{center}
+
+      \caption{2-sphere of radius \(R\) on which a circle of radius \(a\)
+        will be measured to have radius \(a\), which has a flattened radius
+        of \(R sin \left( \frac{a}{R} \right) \neq a\)}
+      \label{fig:sphere}
+  \end{figure}
+
+  Determination by the metric is by Theorema Egregium. Curvature can be
+  evaluated for any space, which in 2D is:
+
+  \begin{equation}
+    k = \frac{1}{2 g_{11} g_{22}} \{ 
+    - \frac{\partial g_{11}}{\partial (x^2)^2} 
+    - \frac{\partial g_{22}}{\partial (x^1)^2}
+    + \frac{1}{2 g_{11}} [ \frac{\partial g_{11}}{\partial x^1}
+      \frac{\partial g_{22}}{\partial x^1} 
+    + ( \frac{\partial g_{11}}{\partial x^2} )^2 ]
+    + \frac{1}{2 g_{22}} [ \frac{\partial g_{11}}{\partial x^2}
+      \frac{\partial g_{22}}{\partial x^2} 
+    + ( \frac{\partial g_{22}}{\partial x^1} )^2 ] \} 
+  \end{equation}
 
 \section{Laws}
 
-\section{Metrics} 
-
 \section{CMB}
 
-This work is available publicly.\cite{Hayden_Cosmology_Source_Repo}
+This paper is available publicly.\cite{Hayden_Cosmology_Source_Repo}
 
 \pagebreak
 \printbibliography
