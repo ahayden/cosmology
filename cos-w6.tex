@@ -1,0 +1,287 @@
+\documentclass{paper}
+\usepackage{times}
+\usepackage{geometry}
+\geometry{letterpaper, portrait, margin=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem,amssymb}
+\usepackage{ragged2e}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{float}
+
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\graphicspath{{data/cos-w6}}
+
+\usepackage{biblatex}
+\bibliography{refs}
+
+\title{cos-w6 tasks}
+\author{ariahayd}
+\date{8 March 2022}
+
+\begin{document} 
+
+\maketitle
+
+\begin{enumerate}
+    \item % 1.
+      \begin{enumerate}
+        \item
+          The first law of thermodynamics is Eq. \ref{eqn:first-thermo}
+          
+          \begin{equation}
+            \dd{E} + P\dd{V} = \dd{Q}
+            \label{eqn:first-thermo}
+          \end{equation}
+    
+          In a universe obeying the cosmological principle, heat is not 
+          exchanged so \(\dd{Q} = 0\). Where \(E = \rho c^2 V\), the sum of 
+          energy densities in the universe, show 
+          \(\dd{\rho} = -(\rho + \frac{P}{c^2}) \frac{\dd{V}}{V}\).
+  
+          Differentiate \(E = \rho c^2 V\):
+          \[ 
+            \dd{E} = \dd{\rho}c^2V + \rho c^2\dd{V} 
+          \]
+
+          Substitute \(\dd{E}\) into \ref{eqn:first-thermo}:
+          \[
+            \dd{\rho}c^2V + \rho c^2\dd{V} = -P\dd{V}
+          \]
+          \[
+            \dd{\rho}c^2V = -\left(\rho c^2 + P\right)\dd{V}
+            \implies \dd{\rho} 
+            = -\left(\rho + \frac{P}{c^2}\right)\frac{\dd{V}}{V}
+          \]
+
+        \item
+          Derive the fluid equation, Eq. \ref{eqn:fluid} by substituting 
+          \(V \propto R^3\):
+
+          \[
+            \dd{\rho} = 
+            -\left(\rho+\frac{P}{c^2}\right)\frac{\dd{V}}{(\propto R^3)}
+          \]
+
+          Differentiate in \(t\):
+          \[
+            \frac{\dd{\rho}}{\dd{t}} 
+            = \frac{\dd{}}{\dd{t}}
+            \left[ - \left(\rho+\frac{P}{c^2}\right) 
+            \frac{3R^2\dd{R}}{R^3} \right]
+            = - \left(\rho + \frac{P}{c^2}\right)
+            \frac{3}{R}\frac{\dd{R}}{\dd{t}}
+          \]
+
+          \begin{equation}
+            \implies
+            \dot{\rho} + \left(\rho + \frac{R}{c^2}\right)
+            \frac{3}{R} \dot{R} = 0
+            \label{eqn:fluid}
+          \end{equation}
+
+        \item
+          \begin{enumerate}
+            \item
+              Show that \(\rho \propto R^{-3}\) for a matter-dominated
+              (non-relativistic) universe, by using Eq. \ref{eqn:fluid} 
+              with \(P=0\).
+              \[
+                \dot{\rho} + \rho \frac{3}{R} \dot{R} = 0
+                \implies \dot{\rho} = - \rho \frac{3}{R} \dot{R}
+                \implies \frac{\dot{\rho}}{\rho} = (-3)\frac{\dot{R}}{R}
+              \]
+
+              Integrate in \(t\):
+              \[
+                \frac{\dd{\rho}}{\rho} = (-3)\frac{\dd{R}}{R}
+              \]
+
+              Integrate both sides:
+              \[
+                \ln{\rho} = -3 \ln{R}+\mathcal{C} \implies \rho \propto R^{-3}
+              \]
+
+            \item
+              Show that \(\rho \propto R^{-4}\) for a radiation-dominated
+              universe, by using Eq. \ref{eqn:fluid} with 
+              \(P=\frac{1}{3}\rho c^2\).
+              \[
+                \dot{\rho} + ( \rho +\frac{\frac{1}{3}\rho c^2}{c^2} ) 
+                \frac{3}{R} \dot{R} = 0
+                \implies
+                \dot{\rho} = -\rho(1 + \frac{1}{3})\frac{3}{R}\dot{R}
+                \implies
+                \frac{\dot{\rho}}{\rho} = (-4)\frac{\dot{R}}{R}
+              \]
+
+              Integrate in \(t\):
+              \[
+                \frac{\dd{\rho}}{\rho} = (-4)\frac{\dd{R}}{R}
+              \]
+
+              Integrate both sides:
+              \[
+                \ln{\rho} = -4 \ln{R}+\mathcal{C} \implies \rho \propto R^{-4}
+              \]
+
+          \end{enumerate}
+
+        \item
+          Show that \(P = - p c^2\) for a \(\Lambda\) steady-state universe,
+          which implies \(\dot{\rho} = 0\). Rewrite Eq. \ref{eqn:fluid}:
+          \[
+            \dot{\rho} = 0 
+            = - \left(\rho + \frac{P}{c^2}\right)\frac{3}{R}\dot{R}
+          \]
+
+          \[
+            \rho + \frac{P}{c^2} = 0  \implies P = - \rho c^2
+          \]
+
+          This result indicates a negative pressure in space due to the 
+          vacuum energy density.
+
+      \end{enumerate}
+
+    \item
+
+      \begin{enumerate}
+
+        \item
+          Rotation curves of spiral galaxies follow a solid-body 
+          gravitational model rather than a decline in rotation away from
+          the center of the galaxy, which indicates significant mass away
+          from the luminous surface of the galaxy. In this case, the dark
+          matter is believed to be non-baryonic because it does not interact 
+          with the baryons of the galaxy and so is not made visible.
+
+        \item
+          Gravitational lensing of distant quasars across a galactic mass
+          is greater than would be expected for the calculated measures of 
+          galaxies as the lensing body due to their visible mass alone.
+
+        \item
+          The modeled age of the universe requires a density parameter for
+          the mass component of energy density to be significantly greater
+          than the observed baryonic matter density in order for the 
+          expansion of the universe to have delayed self-gravitation
+          sufficiently to have reached the age older than the oldest
+          observed star clusters.
+
+      \end{enumerate}
+
+    \item
+      The density parameter, in Eq. \ref{eqn:omega-i}, of the universe is 
+      made up of constituents, \(i\), of different types of energy.
+      \begin{equation}
+        \Omega_i := \frac{\epsilon_i}{\epsilon_c}
+        \label{eqn:omega-i}
+      \end{equation}
+
+      Where \(\epsilon_c\) is the critical density for the observed flat
+      geometry of space, defined for the current era in Eq. 
+      \ref{eqn:epsilon-c}.
+      \begin{equation}
+        \epsilon_c = \frac{3 c^2 H_o^2}{8 \pi G} = 4.9 \si{GeV m^{-3}}
+        \label{eqn:epsilon-c}
+      \end{equation}
+
+      It is possible to calculate the number density of representative
+      particles from the energy density.
+
+      The current contribution from baryon energy density, 
+      \(\Omega_{b,0} \approx 0.04\), can be assumed to be non-relativistic,
+      which gives the rest energy of a representative particle within a 
+      representative volume as:
+      \[
+        E = N M_p c^2 = \epsilon_{b,0} V \implies 
+        \frac{N}{V} = \frac{\epsilon_{b,0}}{M_p c^2}
+      \]
+      Where \( \epsilon_{b,0} = \Omega_{b,0}\epsilon_c \) and
+      \( M_p c^2 = 938 \si{MeV} \), so
+      \[
+        \frac{N}{V} = \frac{\Omega_{b,0}\epsilon_c}{M_p c^2}
+        = \frac{(0.04)4.9 \si{GeV m^{-3}}}{938 \si{MeV}} = 2.1 \si{m^{-3}}
+      \]
+
+      Similarly, the current contribution from radiation energy,
+      \(\Omega_{r,0} \approx 5e^{-5}\), can be assumed to be represented
+      by photons of the peak frequency given by Wien's law for the
+      temperature of the CMB, 
+      \(\nu_{peak} = T \times 5.88e^{10} \si{Hz K^{-1}} \implies
+      \nu_{peak,T=2.725\si{K}} = 1.60e^{11} \si{Hz} \), giving energy
+      within a representative volume as:
+      \[
+        E = N h \nu_{peak} = \epsilon_{r,0} V \implies
+        \frac{N}{V} = \frac{\epsilon_{r,0}}{h \nu_{peak}}
+      \]
+      Where \( \epsilon_{r,0} = \Omega_{r,0}\epsilon_c \) and
+      \( h \nu_{peak} = .0066 \si{eV} \), so 
+      \[
+        \frac{N}{V} = \frac{\Omega_{r,0}\epsilon_c}{h \nu_{peak}}
+        = \frac{(5e^{-5})4.9 \si{GeV m^{-3}}}{.0066 \si{eV}} 
+        = 3.7e^{7} \si{m^{-3}}
+      \]
+
+    \item
+      Rotational velocity implies a central mass of:
+      \[
+        M = \frac{v^2R}{G}
+      \]
+      
+      For the first case with a \(5\si{kpc}\) aperature implies a central
+      mass of:
+      \[
+        M_{5\si{kpc}} = \frac{(150\si{km s^{-1}}) 5 \si{kpc}}{G}
+        = 4.82e^{40} \si{kg} = 2.4e^{10} \si{M_{\odot}}
+      \]
+
+      With a measured luminosity within the aperature of 
+      \(6.5e^{10}L_{\odot}\), the mass-to-light ratio of the stellar
+      population is:
+      \[
+        \frac{M_{\odot}}{L_{\odot}} 
+        = \frac{2.4e^{10}\si{M_{\odot}}}{6.5e^{10}\si{L_{\odot}}} = 0.37
+      \]
+
+      At \(50\si{kpc}\), the rotational velocity implies a central mass of:
+      \[
+        M_{50\si{kpc}} = \frac{(200\si{km s^{-1}}) 50 \si{kpc}}{G}
+        = 9.3e^{41} \si{kg} = 4.6e^{11} \si{M_{\odot}}
+      \]
+
+      The stellar mass within a \(50 \si{kpc}\) aperature, assuming the same
+      mass-to-light ratio calculated for a \(5 \si{kpc}\) aperature, is given
+      by:
+      \[
+        \frac{M_{5 \si{kpc}}}{L_{5 \si{kpc}}} = 
+        \frac{M_{stellar}}{L_{50 \si{kpc}}} \implies
+        M_{stellar} = 0.37 \times L_{50 \si{kpc}} = 4.8e^{10}M_{\odot}
+      \]
+
+      The ratio of central mass measured via rotational velocity to the
+      stellar mass estimate is:
+      \[
+        \frac{M_{50 \si{kpc}}}{M_{stellar}} = 
+        \frac{4.6e^{11} M_{\odot}}{4.8e^{10} L_{\odot}} = 9.6
+      \]
+
+      The total mass measured at the \(50 \si{kpc}\) aperature by rotational
+      velocity implies \(9.6\) times more mass supporting the rotating body
+      than in the stellar population within it.
+
+\end{enumerate}
+
+This paper is available publicly.\cite{Hayden_Cosmology_Source_Repo}
+
+\pagebreak
+\printbibliography
+
+\end{document}
+
