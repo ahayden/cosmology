@@ -2,12 +2,15 @@
 
 TEX = docker compose run texbox
 
+SPELLCHECK = docker compose run spellcheck
+
 IN := $(wildcard *.tex)
 OUT := $(SRCS:%.tex=%.pdf)
 
 all: ${OUT}
 
 %.pdf: %.tex
+	${SPELLCHECK} $<
 	${TEX} $(basename $< .tex)
 
 clean:

@@ -11,3 +11,14 @@ services:
     container_name: texbox
     volumes:
       - .:/data
+
+  spellcheck:
+    image: ghcr.io/ahayden/texbox:spellcheck
+    hostname: spellcheck
+    environment:
+      TERM: "xterm-color"
+    extra_hosts:
+      - "base:127.0.0.1"
+    container_name: spellcheck
+    volumes:
+      - .:/data
