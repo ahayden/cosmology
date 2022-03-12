@@ -17,9 +17,7 @@ jobs:
         #in: [ main.tex, abstract.tex ]
         in: [ cos-w1.tex, cos-w2.tex, cos-w3.tex 
             ,cos-w4.tex, cos-w5.tex, cos-w6.tex
-            #,cos-w7.tex, cos-w8.tex, cos-w9.tex
-            #,cos-w10.tex, cos-w11.tex,
-            ,concepts.tex
+            ,cos-w7.tex #, cos-w8.tex, concepts.tex
             ]
     container: 
       image: docker://ghcr.io/ahayden/texbox:base
